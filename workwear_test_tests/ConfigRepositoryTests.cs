@@ -21,6 +21,42 @@ namespace workwear_test_tests
         }
 
         [Fact]
+        public void RejectsLargeValueOnAdd()
+        {
+            // arrange
+            var repo = new ConfigRepository();
+
+            // act
+            // assert
+            var value = new string('a', Constants.Validation.MaxValueLength + 1);
+            var ex = Assert.Throws<ArgumentException>(() => repo.Add("somekey", value));
+            Assert.StartsWith(Constants.Validation.ValueLengthErrorMessage, ex.Message);
+
+            value = new string('a', Constants.Validation.MaxValueLength);
+            repo.Add("somekey", value);
+            Assert.Equal(value, repo.Get("somekey"));
+        }
+
+        [Fact]
+        public void RejectsLargeValueOnUpdate()
+        {
+            // arrange
+            var repo = new ConfigRepository();
+
+            // act
+            // assert
+            repo.Add("somekey", "somevalue");
+
+            var value = new string('a', Constants.Validation.MaxValueLength + 1);
+            var ex = Assert.Throws<ArgumentException>(() => repo.Update("somekey", value));
+            Assert.StartsWith(Constants.Validation.ValueLengthErrorMessage, ex.Message);
+
+            value = new string('a', Constants.Validation.MaxValueLength);
+            repo.Update("somekey", value);
+            Assert.Equal(value, repo.Get("somekey"));
+        }
+
+        [Fact]
         public void CanUpdateKeyValue()
         {
             // arrange
