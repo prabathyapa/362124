@@ -5,7 +5,7 @@ This application allows creating, reading and updating configuration values as k
 * \.NET 5\.0 - [Download](https://dotnet.microsoft.com/download) 
 * Operating Systems - see [.net 5.0 supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0-supported-os.md)
 
-## Usage
+## Run
 
 ````
 cd workwear_test
@@ -15,7 +15,7 @@ dotnet run
 Open https://localhost:5001/swagger/index.html in browser.
 
 
-## Tests
+## Test
 
 ````
 cd workwear_test_tests
