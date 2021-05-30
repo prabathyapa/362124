@@ -2,8 +2,8 @@
 This application allows creating, reading and updating configuration values as key/value pairs
 
 ## System Requirements
-\.NET 5\.0 - [Download](https://dotnet.microsoft.com/download) 
-Operating Systems - see [.net 5.0 supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0-supported-os.md)
+* \.NET 5\.0 - [Download](https://dotnet.microsoft.com/download) 
+* Operating Systems - see [.net 5.0 supported OS versions](https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0-supported-os.md)
 
 ## Usage
 
